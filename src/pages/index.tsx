@@ -28,7 +28,7 @@ export default function Home() {
     mapScript.async = true;
     // script.src에 map을 불러오는 api를 넣어주자.
     // 여기에서 우리가 기존에 발급 받았던 apiKey를 넣어주면 된다.
-    mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_MAP_API_KEY}&autoload=false`;
+    mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=700d399006256f95732f06b19c046ba5&autoload=false`;
 
     //이제 우리가 만든 script를 document에 붙여주자.
     document.head.appendChild(mapScript);
@@ -43,7 +43,7 @@ export default function Home() {
         // };
         // new window.kakao.maps.Map(mapContainer, mapOption);
 
-        fetch(`${process.env.NEXT_PUBLIC_MYIPADDRESS_API}`)
+        fetch("https://geolocation-api-by-kmk.cpro95.workers.dev")
           .then((r) => r.json())
           .then((ipInfo) => {
             setIpInfo(ipInfo);
